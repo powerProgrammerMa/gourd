@@ -4,6 +4,7 @@ import {Routes,RouterModule} from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 const routes:Routes = [
   {path:"",redirectTo:"/home",pathMatch:"full"},
   {path:"home",component:HomeComponent}
@@ -12,7 +13,8 @@ const routes:Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
