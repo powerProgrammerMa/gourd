@@ -5,16 +5,34 @@ import {Routes,RouterModule} from "@angular/router";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { TimeComponent } from './time/time.component';
+import { FindComponent } from './find/find.component';
+import { MessageComponent } from './message/message.component';
+import { MineComponent } from './mine/mine.component';
 const routes:Routes = [
-  {path:"",redirectTo:"/home",pathMatch:"full"},
-  {path:"home",component:HomeComponent}
+  {path:"",redirectTo:"home",pathMatch:"full"},
+  {path:"home",component:HomeComponent,
+  children:[
+    {path:"",redirectTo:"time",pathMatch:"full"},
+    {path:"time",component:TimeComponent},
+    {path:"find",component:FindComponent},
+    {path:"message",component:MessageComponent},
+    {path:"mine",component:MineComponent},
+   
+  ]
+},
+
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    TimeComponent,
+    FindComponent,
+    MessageComponent,
+    MineComponent
   ],
   imports: [
     BrowserModule,
